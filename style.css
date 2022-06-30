@@ -18,11 +18,11 @@ body {
   
 }
 .select {
+   position: relative;
      
    }
 .container {
-   
-   position: relative;
+   width: 360px;
    font-size: 36px;
    font-weight: 500;
      color: #042553;
@@ -31,45 +31,70 @@ body {
 }
 .select__label {
    height: 60px;
+   width: 100%;
    background: linear-gradient(to right, #FAD126,#FF564E);
    border-radius: 10px;
    border: 1px solid #061122;
    align-items: center;
    padding: 8px;
-   white-space: nowrap;
-}
-.select__dropdown {
-   display: none;
-   min-height: 60px;
-   max-height: 360px;
+     white-space: nowrap;
+   overflow: hidden;
+   cursor: pointer;
    
 }
+.select__dropdown {
+   /* display: none; */
+   width: 360px;
+   min-height: 60px;
+   max-height: 360px;
+   margin-top: 5px;
+   position: absolute;
+   overflow: auto;
+   box-shadow: #b1ab97;
+   left: 0;
+   right: 0;
+   z-index: 2;
+   
+}
+.select__dropdown:hover{
+   display: block
+}
 .select__dropdown::-webkit-scrollbar {
-   width: 1em;
+   width: 0.1em;
    } 
   .select__dropdown::-webkit-scrollbar-track {
    margin: 2px;
    border-radius: 10px;
    background-color: inherit;
   } 
-  select__drop-down::-webkit-scrollbar-thumb {
+
+  .select__drop-down::-webkit-scrollbar-thumb {
    background-color: black;
-   border-radius: 5px;
+   border-radius: 10px;
  }
  .select.active {
    display: block;
  }
  
- .select__dropdown.active {
+ .select.active.select__dropdown{
    display: block;
  }
- /* исправить */
+ 
+
 li {
    cursor: pointer;
-   overflow: hidden;
-   padding: 8px;
    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 8px;
+   font-size: 32px;
+   /* display: block; */
+   
+   
 }
 li:hover {
    background: linear-gradient(to right, #FAD126,#FF564E);
+   border: 1px solid #061122;
+   border-radius: 10px;
+   display: block;
 }

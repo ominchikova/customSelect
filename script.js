@@ -5,13 +5,14 @@ const options = [
    {value:'4', label:'Здоровье'},
    {value:'5', label:'Спортивное питание'},
    {value:'6', label:'Дом'}]
+
    class DropDown {
       constructor(selector,options){
          this.$select=document.querySelector(selector);
          this.options = options;
          this.defaultLabel = document.querySelector('.select__label').innerHTML
          this.$label = document.querySelector('.select__label')
-         this.$dropDown = document.querySelector('select__dropdown')
+         this.$dropDown = document.querySelector('.select__dropdown')
          this.$select.addEventListener('click',(e)=>{
             if (e.target.classList.contains('select__label')) {
                 if (this.$select.classList.contains('active')) {
@@ -26,20 +27,23 @@ const options = [
                 }
    })
    this.itemsHTML = this.options.map(({value,label}) => {
-      return `<li data-id =${value}>${label}</li>`}).join('')
+      return `<li data-id =${value}>${label}</li>`
+   }).join('')
    console.log(this.itemsHTML)
-   this.$dropDown.insertAdjacentHTML('gitn', this.itemsHTML)
+
+   this.$dropDown.insertAdjacentHTML('afterbegin', this.itemsHTML)
 }
 selectedItem(id) {
-   this.$label.innerHTML = this.options.find(item => item.value ===id).label
+   this.$label.innerHTML = this.options.find(item => item.value == id).label
    this.close()
 }
-open(){
+open() {
    this.$select.classList.add('active')
 }
-close( ){
+close() {
    this.$select.classList.remove('active')
       }
    }
 const customSelect = new DropDown ('.select', options)
+
 console.log(customSelect);
