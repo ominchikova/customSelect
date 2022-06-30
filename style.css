@@ -1,0 +1,75 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;;
+   box-sizing: border-box;
+   cursor: default;
+}
+ul,
+li {
+   list-style: none;
+}
+body {
+   height: 100vh;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   background-image: url(./image/backgrounde.jpg);
+  
+}
+.select {
+     
+   }
+.container {
+   
+   position: relative;
+   font-size: 36px;
+   font-weight: 500;
+     color: #042553;
+    
+   
+}
+.select__label {
+   height: 60px;
+   background: linear-gradient(to right, #FAD126,#FF564E);
+   border-radius: 10px;
+   border: 1px solid #061122;
+   align-items: center;
+   padding: 8px;
+   white-space: nowrap;
+}
+.select__dropdown {
+   display: none;
+   min-height: 60px;
+   max-height: 360px;
+   
+}
+.select__dropdown::-webkit-scrollbar {
+   width: 1em;
+   } 
+  .select__dropdown::-webkit-scrollbar-track {
+   margin: 2px;
+   border-radius: 10px;
+   background-color: inherit;
+  } 
+  select__drop-down::-webkit-scrollbar-thumb {
+   background-color: black;
+   border-radius: 5px;
+ }
+ .select.active {
+   display: block;
+ }
+ 
+ .select__dropdown.active {
+   display: block;
+ }
+ /* исправить */
+li {
+   cursor: pointer;
+   overflow: hidden;
+   padding: 8px;
+   white-space: nowrap;
+}
+li:hover {
+   background: linear-gradient(to right, #FAD126,#FF564E);
+}
